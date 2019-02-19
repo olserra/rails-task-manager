@@ -1,0 +1,25 @@
+<h1>My tasks</h1>
+
+<div margin-left: 10px;">
+  <ul style="list-style-type: none; padding: 10px;">
+    <% @tasks.each do |task| %>
+      <% if task.completed%>
+        <li>
+          <i class="far fa-check-square" style="margin-right: 5px;"></i><%= link_to task.title, task_path(task)%>
+          <%= link_to task_path(task), method: :delete do %>
+            <i class="far fa-trash-alt" style="font-size: 10px; color: red; margin-left: 5px;"></i>
+          <% end %>
+        </li>
+      <% else %>
+        <li>
+          <i class="far fa-square" style="margin-right: 5px;"></i><%= link_to task.title, task_path(task)%>
+          <%= link_to task_path(task), method: :delete do %>
+            <i class="far fa-trash-alt" style="font-size: 10px; color: red; margin-left: 5px;"></i>
+          <% end %>
+        </li>
+        <% end %>
+    <% end %>
+  </ul>
+</div>
+
+<i class="fas fa-plus-circle" style="font-size: 15px; color: blue; padding: 10px;"></i><%= link_to ' new Task', new_task_path %>

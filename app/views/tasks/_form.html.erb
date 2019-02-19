@@ -1,0 +1,17 @@
+<div style="margin-left: 15px; margin-right: 30px;">
+  <%= form_for @task do |form| %>
+    <%= form.label :title %>
+    <%= form.text_field :title, class:"form-control" %>
+    <div style="margin-bottom: 10px;">
+      <%= form.label :details %>
+      <%= form.text_field :details, class:"form-control" %>
+    </div>
+    <div>
+      <%= form.check_box :completed %>
+      <%= form.label :completed %>
+    </div>
+    <div>
+      <%= form.submit "Update", class: "btn btn-primary"%>
+    </div>
+  <% end %>
+</div>
